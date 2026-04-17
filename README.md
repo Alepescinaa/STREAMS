@@ -13,6 +13,9 @@ devtools::install_github("Alepescinaa/STREAMS")
 
 library(STREAMS)
 
+## Install python and python requirements
+To learn how go to README in inst folder
+
 ## Load example panel data
 data("toy_example")
 panel_data <- toy_example
@@ -28,10 +31,12 @@ check_input_data(panel_data)
 fit_streams <- run_streams(
   data              = panel_data,
   cov_vector        = cov_vector,
-  python            = Sys.which("python3"),
+  python            = reticulate::py_config()$python,  
   pu_args           = list(verbose = TRUE),
   features_prop_add = NULL
 )
+
+or Sys.which("python") depending on the us eof reticulate library or not
 
 ##Overall object
 class(fit_streams)
@@ -40,10 +45,9 @@ summary(fit_streams, plots = TRUE)
 ## First transition model
 trans1_streams <- fit_streams[[1L]]
 class(trans1_streams)
-
 print(trans1_streams)
 confint(trans1_streams)
-attr(trans1_streams, "rubin") 
+(trans1_streams, "rubin") 
 coef(trans1_streams)
 summary(trans1_streams)
 

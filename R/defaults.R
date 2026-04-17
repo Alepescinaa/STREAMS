@@ -28,3 +28,9 @@
   batch_size = 256
 )
 
+#' @noRd
+.default_infer_args2 <- list(
+  latent_dim = 5,
+  m = 1,
+  batch_size = 256
+)

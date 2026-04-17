@@ -8,7 +8,7 @@ The script `train.py` implements a Mean Teacher conditional variational autoenco
 Before using the Python scripts, install the required modules:
 
 ``` bash
-pip install -r requirements.txt
+pip install -r inst/requirements.txt
 ```
 
 ## Check Python version
@@ -27,7 +27,7 @@ Terminal:
 python --version
 ```
 
-If they don't check the path used by R:
+If they don't, check the path used by R:
 
 ``` r
 system2("python", args = "-c \"import sys; print(sys.executable)\"")
