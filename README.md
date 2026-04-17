@@ -1,7 +1,7 @@
 # STREAMS
 Semi-supervised Trajectory REconstruction Across interval-censored Multi-State models.
 
-`STREAMS` is an R package for reconstructing latent disease trajectories in
+`STREAMS` is an R package with python backend for reconstructing latent disease trajectories in
 progressive illness–death models using semi-supervised learning and then fitting
 parametric multi-state models with proper pooling across multiple imputations.
 
