@@ -5,7 +5,7 @@ Semi-supervised Trajectory REconstruction Across interval-censored Multi-State m
 progressive illness–death models using semi-supervised learning and then fitting
 parametric multi-state models with proper pooling across multiple imputations.
 
-# Installation
+## Installation
 
 install.packages("devtools")  # if not already installed
 devtools::install_github("Alepescinaa/STREAMS")
@@ -13,17 +13,17 @@ devtools::install_github("Alepescinaa/STREAMS")
 
 library(STREAMS)
 
-# Load example panel data
+## Load example panel data
 data("toy_example")
 panel_data <- toy_example
 
-# Covariates to be used in the model
+## Covariates to be used in the model
 cov_vector <- c("cov1", "cov2", "cov3")
 
-# Sanity check on the input structure (optional, it is nested in main pipeline)
+## Sanity check on the input structure (optional, it is nested in main pipeline)
 check_input_data(panel_data)
 
-# Run the main pipeline
+## Run the main pipeline
 
 fit_streams <- run_streams(
   data              = panel_data,
@@ -33,11 +33,11 @@ fit_streams <- run_streams(
   features_prop_add = NULL
 )
 
-# Overall object
+##Overall object
 class(fit_streams)
 summary(fit_streams, plots = TRUE)
 
-# First transition model
+## First transition model
 trans1_streams <- fit_streams[[1L]]
 class(trans1_streams)
 
